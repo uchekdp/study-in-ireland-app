@@ -64,7 +64,7 @@ export default function Footer() {
 
               <div className="flex items-start space-x-3 text-brand-cream/70 sm:col-span-2 mt-2 bg-brand-cream/5 p-4 rounded-xl border border-white/5">
                 <MapPin className="w-5 h-5 text-brand-gold shrink-0 mt-0.5" />
-                <p>Nigeria Office: <br/> Contact us via numbers above for physical consultation appointments.</p>
+                <p>Nigeria Office: <br/> 33 Okota Road, Okota-Isolo, Lagos</p>
               </div>
             </div>
           </div>

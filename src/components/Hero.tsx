@@ -23,7 +23,7 @@ export default function Hero() {
               className="inline-flex items-center rounded-full px-4 py-1.5 bg-brand-emerald/10 border border-brand-emerald/20 text-brand-emerald mb-6"
             >
               <span className="flex h-2 w-2 rounded-full bg-brand-gold mr-2 animate-pulse"></span>
-              <span className="text-sm font-semibold tracking-wide uppercase">8 Months Study & Work Program</span>
+              <span className="text-sm font-semibold tracking-wide uppercase">8 Months General English Program</span>
             </motion.div>
 
             <motion.h1
@@ -42,7 +42,7 @@ export default function Hero() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl sm:text-2xl text-brand-charcoal/70 mb-8 font-light"
             >
-              Start Your New Life In Ireland With <span className="font-semibold text-brand-gold">Creativeswiftng</span>
+              Exclusive 8-Month English Language Program tailored for <span className="font-semibold text-brand-gold">Nigerians</span>. Explore Ireland with Creativeswiftng.
             </motion.p>
 
             <motion.div

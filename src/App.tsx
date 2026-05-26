@@ -8,6 +8,8 @@ import Home from './pages/Home';
 import Application from './pages/Application';
 import About from './pages/About';
 import Admin from './pages/Admin';
+import ExpectationDetails from './pages/ExpectationDetails';
+import JourneyDetails from './pages/JourneyDetails';
 
 export default function App() {
   return (
@@ -22,6 +24,8 @@ export default function App() {
             <Route path="/application" element={<Application />} />
             <Route path="/about" element={<About />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/expectation/:id" element={<ExpectationDetails />} />
+            <Route path="/journey/:id" element={<JourneyDetails />} />
           </Routes>
         </main>
 

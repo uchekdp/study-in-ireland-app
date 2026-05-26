@@ -1,26 +1,31 @@
 import { Briefcase, CalendarCheck, FileCheck, RefreshCw, Plane, Home, CreditCard } from 'lucide-react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 
 export default function DetailsSection() {
   const expectations = [
     {
+      id: "work-permission",
       title: "Work Permission",
-      description: "Earn an average wage of €14.5/hr while studying part-time.",
+      description: "Earn an average wage of €14.5/hr while studying English part-time.",
       icon: Briefcase,
     },
     {
+      id: "renewable-trc",
       title: "Renewable TRC",
-      description: "Temporary Residence Card renewable for 3 consecutive years.",
+      description: "Temporary Residence Card renewable up to 3 times for language studies.",
       icon: RefreshCw,
     },
     {
+      id: "rolling-intake",
       title: "Rolling Intake",
-      description: "Year-Round Admission process. Apply any time of the year.",
+      description: "Flexible start dates with language courses beginning frequently.",
       icon: CalendarCheck,
     },
     {
+      id: "no-age-limit",
       title: "No Age Limit",
-      description: "Open to everyone willing to advance their career and education.",
+      description: "Open to adults of all ages looking to improve their English skills.",
       icon: FileCheck,
     }
   ];
@@ -52,15 +57,19 @@ export default function DetailsSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-white p-8 rounded-[2rem] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-shadow border border-brand-charcoal/5 group"
               >
-                <div className="w-14 h-14 rounded-2xl bg-brand-cream flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-emerald group-hover:text-brand-gold transition-all duration-300">
-                  <item.icon className="w-7 h-7 text-brand-emerald group-hover:text-brand-gold" />
-                </div>
-                <h4 className="text-xl font-bold text-brand-charcoal mb-3">{item.title}</h4>
-                <p className="text-brand-charcoal/70 leading-relaxed text-sm">
-                  {item.description}
-                </p>
+                <Link
+                  to={`/expectation/${item.id}`}
+                  className="block h-full bg-white p-8 rounded-[2rem] shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_4px_30px_rgba(0,0,0,0.08)] transition-all duration-300 border border-brand-charcoal/5 group hover:-translate-y-1"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-brand-cream flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-brand-emerald group-hover:text-brand-gold transition-all duration-300">
+                    <item.icon className="w-7 h-7 text-brand-emerald group-hover:text-brand-gold" />
+                  </div>
+                  <h4 className="text-xl font-bold text-brand-charcoal mb-3">{item.title}</h4>
+                  <p className="text-brand-charcoal/70 leading-relaxed text-sm">
+                    {item.description}
+                  </p>
+                </Link>
               </motion.div>
             ))}
           </div>

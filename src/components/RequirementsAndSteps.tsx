@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
-import { CheckCircle2, FileText, IdCard, GraduationCap, Map } from 'lucide-react';
+import { CheckCircle2, FileText, IdCard, GraduationCap, Map, BookOpen, UserCheck, Settings, Mail, CreditCard, Banknote, ShieldCheck, Plane, Home } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function RequirementsAndSteps() {
   const requirements = [
@@ -9,16 +10,16 @@ export default function RequirementsAndSteps() {
   ];
 
   const steps = [
-    "Program Selection",
-    "Eligibility Check",
-    "Admission Processing",
-    "Receive Admission Letter",
-    "Tuition Payment",
-    "Proof Of Funds Preparation",
-    "Visa Processing",
-    "Visa Success",
-    "Flight Booking",
-    "Arrival & Settlement Support",
+    { id: "program-selection", title: "Program Selection", icon: BookOpen },
+    { id: "eligibility-check", title: "Eligibility Check", icon: UserCheck },
+    { id: "admission-processing", title: "Admission Processing", icon: Settings },
+    { id: "receive-admission-letter", title: "Receive Admission Letter", icon: Mail },
+    { id: "tuition-payment", title: "Tuition Payment", icon: CreditCard },
+    { id: "proof-of-funds", title: "Proof Of Funds Preparation", icon: Banknote },
+    { id: "visa-processing", title: "Visa Processing", icon: FileText },
+    { id: "visa-success", title: "Visa Success", icon: ShieldCheck },
+    { id: "flight-booking", title: "Flight Booking", icon: Plane },
+    { id: "arrival-settlement", title: "Arrival & Settlement Support", icon: Home },
   ];
 
   return (
@@ -90,15 +91,17 @@ export default function RequirementsAndSteps() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.05 }}
-                  className="bg-brand-cream p-6 rounded-3xl relative border border-white hover:border-brand-gold/30 hover:shadow-xl transition-all group"
+                  className="bg-brand-cream p-6 rounded-3xl relative border border-white hover:border-brand-gold/30 hover:shadow-xl transition-all group hover:-translate-y-1 block"
                 >
-                  <div className="text-6xl font-display font-black text-white absolute -top-4 -right-2 drop-shadow-md opacity-50 group-hover:text-brand-gold/20 transition-colors">
-                    {(index + 1).toString().padStart(2, '0')}
-                  </div>
-                  <div className="w-8 h-8 rounded-full bg-brand-gold text-brand-emerald flex items-center justify-center font-bold text-sm mb-4 relative z-10">
-                    <CheckCircle2 className="w-5 h-5 text-brand-emerald" />
-                  </div>
-                  <h4 className="font-semibold text-brand-charcoal leading-tight relative z-10 pr-4">{step}</h4>
+                  <Link to={`/journey/${step.id}`} className="block h-full">
+                    <div className="text-6xl font-display font-black text-white absolute -top-4 -right-2 drop-shadow-md opacity-50 group-hover:text-brand-gold/20 transition-colors">
+                      {(index + 1).toString().padStart(2, '0')}
+                    </div>
+                    <div className="w-8 h-8 rounded-full bg-brand-gold text-brand-emerald flex items-center justify-center font-bold text-sm mb-4 relative z-10">
+                      <step.icon className="w-5 h-5 text-brand-emerald" />
+                    </div>
+                    <h4 className="font-semibold text-brand-charcoal leading-tight relative z-10 pr-4">{step.title}</h4>
+                  </Link>
                 </motion.div>
               ))}
             </div>
